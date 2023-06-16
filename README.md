@@ -14,7 +14,7 @@ This project is a Continuous Integration/Continuous Deployment (CI/CD) pipeline 
 	▪ Create the Buildspec File
 	▪ Create Personal Access Token
 	▪ Create Build Project in CodeBuild
-  ▪ Build Another Docker Image and Push it to Docker Hub
+  	▪ Build Another Docker Image and Push it to Docker Hub
 
 ## Project Structure
 
@@ -29,6 +29,17 @@ The project is organized into the following directories and files:
 - `push-img.sh`: This shell script tags the Docker image specified by the `IMAGE_TAG` environment variable with the Docker Hub username and repository name, and then pushes the image to Docker Hub.
 
 - `buildspec.yml`: This file is used by AWS CodeBuild to execute the build process. It specifies the commands to run during each phase of the build process.
+
+
+### Dockerfiles
+The Dockerfiles in the "jupiter" and "techmax" sub-folders contain the necessary instructions to build the Docker images. They specify the base image to use, the dependencies to install, and the commands to run.
+
+### Shell Scripts
+The shell scripts (build-img.sh and push-img.sh) automate the process of building and pushing the Docker images. They contain the necessary Docker commands to perform these tasks.
+
+### Buildspec File
+The buildspec.yml file is a crucial component of the AWS CodeBuild setup. It instructs CodeBuild on how to run the build. It specifies the environment variables, the build commands, and the post-build commands.
+
 
 ## AWS CodeBuild Configuration
 
@@ -60,4 +71,4 @@ Please note that the actual values for the environment variables should be provi
 This project demonstrates how to use AWS CodeBuild to automate the process of building Docker images and pushing them to Docker Hub. It provides a solid foundation for implementing a CI/CD pipeline for Docker-based applications.
 
 ## Acknowledgments and Credits
-This project is completely based on the YouTube project "CI/CD Project For Beginner | Build Docker Image | Create a CodeBuild Project" by "AOS Note" (www.aosnote.com)
+This project is entirely based on the YouTube project "CI/CD Project For Beginner | Build Docker Image | Create a CodeBuild Project" by "AOS Note" (www.aosnote.com)
